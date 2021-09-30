@@ -1,0 +1,60 @@
+.container2{
+    display: inline;
+      
+  }
+  .left-pan{
+    float:left;
+    width:50%;
+    background-color: white;
+    color: black;
+    border-bottom: 0px;
+  }
+  .right-pan{
+    float: right;
+    width:50%;
+    text-align: center;
+    background-color: white;
+    color: black;
+    
+  }
+
+  #button{
+    padding: 10px;
+    background-color:royalblue ;
+    float:inline-start;
+    color: white;
+  }
+h2{
+    color: royalblue;
+}
+#button{
+  padding: 10px;
+  background-color:royalblue ;
+  float: inline-start;
+}
+#previous-button{
+  padding: 8px;
+  background-color:rgb(72, 113, 235) ;
+  float: inline-start;
+}
+#next-button{
+  padding: 8px;
+  background-color:rgb(11, 170, 11) ;
+  float: right;
+}
+#save-button{
+  padding: 8px;
+  background-color:rgb(11, 170, 11) ;
+  float:inline-start ;
+}
+.content-box{
+  background-color:aliceblue;
+  padding: 30px;
+}
+.content-box1{
+  background-color:aliceblue;
+  padding: 30px;
+  height: 250px;
+  width:600px;
+  padding-left: 250px;
+}

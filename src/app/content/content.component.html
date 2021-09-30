@@ -1,0 +1,96 @@
+<div class="container2">
+    <h2>VK Online Proficiency test</h2>
+    <h3>Online test for organisation</h3>
+  <div class="container2" *ngIf="myVar1">
+    <div class="left-pan">
+        <h4>Instructions/Guidelines for online Test.</h4>
+        <ol>
+            <li>Candidate should click on "Start Test" button to attempt online test.</li>
+            <li>Candidates are not suppose to use other gadgets/notes/books while taking online test.</li>
+            <li>The Online test comprises of 20 MCQs questions. 
+                Each MCQ has four answer options out of which, one option is the correct answer. Each question carries 1 Mark. 
+                There is no negative marking for the wrong answers.</li>
+            <li>The Duration of online test is one hour.</li>
+            <li>Candidate can choose any one of the following actions for the question displayed on the screen.
+                Choose the answer option for the displayed question, save it and choose the next question by clicking on “Save" and  "Next”. </li>
+            <li>
+                Choose not to answer the question and click on "Next" button. 
+                He/ she can come back to the skipped question later.
+            </li>
+            <li>
+                In case, the online examination is interrupted due to power failure / Internet connectivity failure / any other reason, the candidate need not panic. 
+                The online test can be resumed from the same point where it was after the problem causing interruption is resolved. 
+                The countdown timer freezes at the moment of interruption and restarts at resumption. 
+                However, in case of frequent interruption of the online test, the candidate has to justify the interruptions with substantiating reasons. 
+            </li>
+            <br/>
+            <input type="button" id="button" value="Start Online Test" (click)="showhideUtility()">
+        </ol>
+       
+     </div>
+    <div class="right-pan">
+      <img width="80%" height="100%" src="assets/images/online-exam_img.jpg" />
+    </div>
+  </div>
+  <div class="content-box" *ngIf="myVar2">
+        <br/>
+        <h2 style="color: black;">{{queNum}}. {{que}} </h2><br/><br/>
+        <input type="checkbox" name="option1" id="option1" (click)="answered('option1',queNum)"  [checked]=itemChecked1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{opt1}} <br/><br/>
+        <input type="checkbox" name="option2" [checked]=itemChecked2 (click)="answered('option2', queNum)" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{opt2}} <br/><br/>
+        <input type="checkbox" name="option3" [checked]=itemChecked3 (click)="answered('option3', queNum)" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{opt3}}<br/><br/>
+        <input type="checkbox" name="option4" [checked]=itemChecked4 (click)="answered('option4', queNum)" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{opt4}}<br/><br/><br/>
+        <div *ngIf="displayNext">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" id="next-button" value="Next Question>>" (click)="nextQuestion()"/>
+        </div>
+        <div *ngIf="displayBoth">
+          <input type="button" id="previous-button" value="<< Previous Question" (click)="previousQuestion()"/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" id="next-button" value="Next Question>>" (click)="nextQuestion()"/>
+        </div>
+       
+        <div *ngIf="displaySubmit">
+          <input type="button" id="previous-button" value="<< Previous Question" (click)="previousQuestion()"/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" id="next-button" value="Submit" (click)="calculateScore()"/>
+    
+        </div>
+  </div>
+  <div *ngIf="resDis" class="content-box1">
+    <br/>
+    <br/>
+    <h2>Congratulations!</h2>
+    Your test is been submitted successfully.<br/>
+    We will get back to you regarding feedback.
+    <h4>Your total score is {{score}}</h4>
+
+  </div>
+  
+</div>
+
+  

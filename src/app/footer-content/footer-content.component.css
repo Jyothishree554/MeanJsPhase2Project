@@ -1,0 +1,56 @@
+.container4{
+    background-color: white;
+    padding: 50px;
+    padding-top:50px;
+  }
+.nav {
+    display: inline; /* Or inline-block */
+
+}
+#left-nav{
+  float:left;
+}
+#right-nav{
+  float:right;
+}
+li{
+    display: inline-block;
+  }
+  a{
+    text-decoration: none;
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding: 10px;
+    margin:0px;
+    padding-top:0px;
+  }
+  .container5{
+    
+    display: inline;
+}
+.footer1{
+    width:80%;
+    float:left;
+}
+td, th{
+   text-align: left; 
+    padding: 10px;
+}
+th{
+    color: dimgrey;
+}
+td{
+    color: royalblue;
+}
+footer1{
+    float:left;
+    width: 80%;
+
+}
+footer2{
+    float:right;
+    width: 20%;
+    
+    
+}
